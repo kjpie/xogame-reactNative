@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Alert, Button } from 'react-native';
-import { MaterialCommunityIcons as Icon } from 'react-native-vector-icons';
+
 
 export default class App extends React.Component {
 
@@ -91,9 +91,9 @@ export default class App extends React.Component {
   renderIcon = (row, col) => {
     var value = this.state.gameState[row][col];
     switch(value) {
-      case 1: return <Icon name="close" style={styles.tileX} />;
-      case -1: return <Icon name="circle-outline" style={styles.tileO} />;
-      default: return <View />;
+        case 1: return <Text style={styles.tileX}>X</Text>;
+        case -1: return <Text style={styles.tileO}>O</Text>;
+        default: return <View />;
     }
 
   }
@@ -155,24 +155,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   tile: {
-    borderWidth: 10,
+    borderWidth: 1,
     width: 100,
     height: 100,
   },
   tileX: {
-    color: "red",
     fontSize: 80,
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-
+    textAlign: "center",
+    color: "red"
   },
   tileO: {
-    color: "green",
     fontSize: 80,
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-
+    textAlign: "center",
+    color: "green"
   }
 });
